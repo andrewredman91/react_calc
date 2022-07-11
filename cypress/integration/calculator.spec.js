@@ -21,6 +21,28 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click()
     cy.get('.display').should('contain', '25')
   })
+
+  it('should have the arithmetical operations update the display with the result of the operation', () =>{
+    cy.get('#number5').click();
+    cy.get('#operator-add').click();
+    cy.get('#number5').click();
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '10')
+  })
+  it('should have the arithmetical operations update the display with the result of the operation', () =>{
+    cy.get('#number5').click();
+    cy.get('#operator-subtract').click();
+    cy.get('#number5').click();
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '0')
+  })
+  it('should have the arithmetical operations update the display with the result of the operation', () =>{
+    cy.get('#number5').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number5').click();
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '1')
+  })
   it('should multiple operations be chained together',() =>{
     cy.get('#number5').click();
     cy.get('#operator-multiply').click();
